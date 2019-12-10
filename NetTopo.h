@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 const int DefaultVertices=200;  //默认的拓扑的最大顶点数
+const int inf=1000; //边的最大权值
 class NetTopo
 {
 public:
