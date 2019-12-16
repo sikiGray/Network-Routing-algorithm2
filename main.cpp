@@ -6,6 +6,7 @@ int main(void)
 {
     int i,j,cost;
     int t,v;
+    int v1,v2;
     int dist[100];
     int path[100];
     NetTopo G;
@@ -49,8 +50,9 @@ int main(void)
                 break;
 
         case 3:
-            cout<<"请输入要添加的边的信息：";
-            //cin>>
+            cout<<"请输入要添加的边的两个顶点与权值：";
+            cin>>v1>>v2>>cost;
+            G.insertEdge(G.getVertexPos(v1),G.getVertexPos(v2),cost);
             break;
         case 6:
             cout<<"请输入要查询路由表的路由器号：";
@@ -59,7 +61,7 @@ int main(void)
             if(v==-1)
             {
                 cout<<"不存在此路由器"<<endl;
-                //continue;
+                continue;
             }
             G.ShortestPath(v,dist,path);
             G.printRoutingTable(v,dist,path);
