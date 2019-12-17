@@ -1,3 +1,4 @@
+#include"NetTopo.h"
 //打印路由表
 void NetTopo::printRoutingTable(int v,int dist[],int path[])
 {

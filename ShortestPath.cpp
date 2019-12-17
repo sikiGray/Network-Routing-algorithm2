@@ -1,3 +1,4 @@
+#include"NetTopo.h"
 //求顶点v到各个顶点的最短路径
 void NetTopo::ShortestPath(int v,int dist[],int path[])
 {

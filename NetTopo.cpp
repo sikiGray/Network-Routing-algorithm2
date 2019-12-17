@@ -1,3 +1,4 @@
+#include"NetTopo.h"
 //¹¹Ôìº¯Êý
 NetTopo::NetTopo(int sz)
 {
