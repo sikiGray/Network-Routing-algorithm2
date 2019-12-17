@@ -27,16 +27,21 @@ int main(void)
         {
         case 1:
             fin.open("Vertex.txt",ios::in);
+            //cout<<'*'<<endl;
             while(fin>>i)
             {
                 G.insertVertex(i);
-                cout<<i<<endl;
+                //cout<<i<<endl;
             }
 
             fin.close();
             fin.open("NetTopo.txt",ios::in);
             while(fin>>i>>j>>cost)
+            {
                 G.insertEdge(G.getVertexPos(i),G.getVertexPos(j),cost);
+                //cout<<'*'<<endl;
+            }
+
             fin.close();
             cout<<"导入成功"<<endl;
             break;
@@ -54,6 +59,20 @@ int main(void)
             cin>>v1>>v2>>cost;
             G.insertEdge(G.getVertexPos(v1),G.getVertexPos(v2),cost);
             break;
+        case 4:
+            cout<<"请输入要删除的顶点：";
+            cin>>v;
+            if(G.removeVertex(G.getVertexPos(v)))
+                cout<<"插入成功！"<<endl;
+            else
+                cout<<"插入失败！"<<endl;
+        case 5:
+            cout<<"请输入要删除的边的两个顶点："<<endl;
+            cin>>v1>>v2;
+            if(G.removeEdge(G.getVertexPos(v1),G.getVertexPos(v2)))
+                cout<<"删除成功！"<<endl;
+            else
+                cout<<"删除失败！"<<endl;
         case 6:
             cout<<"请输入要查询路由表的路由器号：";
             cin>>t;
@@ -61,7 +80,7 @@ int main(void)
             if(v==-1)
             {
                 cout<<"不存在此路由器"<<endl;
-                continue;
+                break;
             }
             G.ShortestPath(v,dist,path);
             G.printRoutingTable(v,dist,path);
