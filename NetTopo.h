@@ -11,6 +11,7 @@ public:
 
     bool insertVertex(int v);//插入顶点
     int getVertexPos(int v);//给出顶点在顶点表中的下标
+    int getDegree(int v);//给出顶点的度
     int getWeight(int v1,int v2);//返回边(v1,v2)上的权值，若存在顶点不在图中，则函数返回0
     bool insertEdge(int v1,int v2,int cost);//插入边(v1,v2),权值为cost
     bool removeVertex(int v);//删除顶点v及相关的边

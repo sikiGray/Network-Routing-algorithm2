@@ -43,6 +43,8 @@ int main(void)
             fin.close();
             cout<<endl;
             cout<<"         导入成功！"<<endl<<endl;
+            //cin>>v;
+            //cout<<G.getDegree(G.getVertexPos(v))<<endl;
             system("pause");
             system("cls");
             break;
@@ -50,37 +52,57 @@ int main(void)
             cout<<"请输入新的顶点信息：";
             cin>>v;
             if(G.insertVertex(v))
-                cout<<"         插入成功！"<<endl;
+            {
+                cout<<endl;
+                cout<<"         插入成功！"<<endl<<endl;
+            }
             else
-                cout<<"         插入失败！"<<endl;
-
+            {
+                cout<<endl;
+                cout<<"         插入失败！"<<endl<<endl;
+            }
             system("pause");
             system("cls");
             break;
-
         case 3:
             cout<<"请输入要添加的边的两个顶点与权值：";
             cin>>v1>>v2>>cost;
             G.insertEdge(G.getVertexPos(v1),G.getVertexPos(v2),cost);
+
+            system("pause");
+            system("cls");
             break;
         case 4:
             cout<<"请输入要删除的顶点：";
             cin>>v;
             if(G.removeVertex(G.getVertexPos(v)))
-                cout<<"         删除成功！"<<endl;
+            {
+                cout<<endl;
+                cout<<"         删除成功！"<<endl<<endl;
+            }
             else
-                cout<<"         删除失败！"<<endl;
+            {
+                cout<<endl;
+                cout<<"         删除失败！"<<endl<<endl;
+            }
             system("pause");
             system("cls");
             break;
         case 5:
-            cout<<"请输入要删除的边的两个顶点："<<endl;
+            cout<<"请输入要删除的边的两个顶点：";
             cin>>v1>>v2;
 
             if(G.removeEdge(G.getVertexPos(v1),G.getVertexPos(v2)))
-                cout<<"         删除成功！"<<endl;
+            {
+                cout<<endl;
+                cout<<"         删除成功！"<<endl<<endl;
+            }
             else
-                cout<<"         删除失败！"<<endl;
+            {
+                cout<<endl;
+                cout<<"         删除失败！"<<endl<<endl;
+            }
+
             system("pause");
             system("cls");
             break;
@@ -91,6 +113,8 @@ int main(void)
             if(v==-1)
             {
                 cout<<"         不存在此路由器！"<<endl;
+                system("pause");
+                system("cls");
                 break;
             }
             G.ShortestPath(v,dist,path);

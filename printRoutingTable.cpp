@@ -2,22 +2,17 @@
 //打印路由表
 void NetTopo::printRoutingTable(int v,int dist[],int path[])
 {
-    /*
-    for(int i=0;i<numVertices;++i)
+    cout<<endl;
+    if(getDegree(v)==0)
     {
-        for(int j=0;j<numVertices;++j)
-            cout<<Edge[i][j]<<' ';
-        cout<<endl;
+        cout<<"该路由器已从网络中断开！"<<endl<<endl;
+        return;
     }
-    for(int i=0;i<numVertices;++i)
-        cout<<path[i]<<' ';
-    cout<<endl;*/
-
     cout<<"路由器"<<VerticesList[v]<<"的路由表如下："<<endl;
     cout<<"\t目的网络"<<"\t下一跳"<<endl;
     for(int i=0;i<numVertices;++i)
     {
-        if(i!=v)
+        if(i!=v&&getDegree(i)>0)
         {
             int k=i;
             while(path[k]!=v)
