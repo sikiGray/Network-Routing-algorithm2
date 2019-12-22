@@ -1,7 +1,9 @@
 #include<iostream>
 #include<fstream>
+#include<windows.h>
 #include"NetTopo.h"
 using namespace std;
+void menu();
 int main(void)
 {
     int i,j,cost;
@@ -12,14 +14,10 @@ int main(void)
     NetTopo G;
     ifstream fin;
 
-    cout<<"\t\t1、从文件导入网络拓扑信息"<<endl<<endl;
-    cout<<"\t\t2、插入新的顶点"<<endl<<endl;
-    cout<<"\t\t3、插入新的边"<<endl<<endl;
-    cout<<"\t\t4、删除指定顶点"<<endl<<endl;
-    cout<<"\t\t5、删除指定边"<<endl<<endl;
-    cout<<"\t\t6、输出指定路由器的路由表"<<endl<<endl;
+
     while(1)
     {
+        menu();
         int choice;
         cout<<"请输入选项：";
         cin>>choice;
@@ -43,16 +41,22 @@ int main(void)
             }
 
             fin.close();
-            cout<<"导入成功"<<endl;
+            cout<<endl;
+            cout<<"         导入成功！"<<endl<<endl;
+            system("pause");
+            system("cls");
             break;
         case 2:
             cout<<"请输入新的顶点信息：";
             cin>>v;
             if(G.insertVertex(v))
-                cout<<"插入成功！"<<endl;
+                cout<<"         插入成功！"<<endl;
             else
-                cout<<"插入失败！"<<endl;
-                break;
+                cout<<"         插入失败！"<<endl;
+
+            system("pause");
+            system("cls");
+            break;
 
         case 3:
             cout<<"请输入要添加的边的两个顶点与权值：";
@@ -63,27 +67,37 @@ int main(void)
             cout<<"请输入要删除的顶点：";
             cin>>v;
             if(G.removeVertex(G.getVertexPos(v)))
-                cout<<"插入成功！"<<endl;
+                cout<<"         删除成功！"<<endl;
             else
-                cout<<"插入失败！"<<endl;
+                cout<<"         删除失败！"<<endl;
+            system("pause");
+            system("cls");
+            break;
         case 5:
             cout<<"请输入要删除的边的两个顶点："<<endl;
             cin>>v1>>v2;
+
             if(G.removeEdge(G.getVertexPos(v1),G.getVertexPos(v2)))
-                cout<<"删除成功！"<<endl;
+                cout<<"         删除成功！"<<endl;
             else
-                cout<<"删除失败！"<<endl;
+                cout<<"         删除失败！"<<endl;
+            system("pause");
+            system("cls");
+            break;
         case 6:
             cout<<"请输入要查询路由表的路由器号：";
             cin>>t;
             v=G.getVertexPos(t);
             if(v==-1)
             {
-                cout<<"不存在此路由器"<<endl;
+                cout<<"         不存在此路由器！"<<endl;
                 break;
             }
             G.ShortestPath(v,dist,path);
             G.printRoutingTable(v,dist,path);
+
+            system("pause");
+            system("cls");
             break;
         }
     }
