@@ -69,6 +69,8 @@ int main(void)
             cin>>v1>>v2>>cost;
             G.insertEdge(G.getVertexPos(v1),G.getVertexPos(v2),cost);
 
+            cout<<endl;
+            cout<<"         Ìí¼Ó³É¹¦£¡"<<endl<<endl;
             system("pause");
             system("cls");
             break;
