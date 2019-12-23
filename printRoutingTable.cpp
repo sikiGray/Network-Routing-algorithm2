@@ -21,5 +21,9 @@ void NetTopo::printRoutingTable(int v,int dist[],int path[])
             }
             cout<<"\t  "<<VerticesList[i]<<"\t\t  "<<VerticesList[k]<<endl;
         }
+        else if(i==v)
+        {
+            cout<<"\t  "<<VerticesList[i]<<"\t\t  "<<"Ö±½Ó"<<endl;
+        }
     }
 }

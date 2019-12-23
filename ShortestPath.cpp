@@ -10,7 +10,6 @@ void NetTopo::ShortestPath(int v,int dist[],int path[])
     {
         dist[i]=getWeight(v,i);//最短路径长度数组初始化
         S[i]=false;
-
         if(i!=v&&dist[i]<inf)
             path[i]=v;  //保存该顶点的前一个顶点
         else
