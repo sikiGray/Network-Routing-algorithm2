@@ -2,6 +2,7 @@
 //求顶点v到各个顶点的最短路径
 void NetTopo::ShortestPath(int v,int dist[],int path[])
 {
+    cout<<"赵海超"<<endl;
     int n=numVertices;
     bool *S=new bool[n];//最短路径顶点集
     //int i,j,k;
