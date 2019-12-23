@@ -17,7 +17,6 @@ int main(void)
 
     while(1)
     {
-        cout<<"²âÊÔ"<<endl;
         menu();
         int choice;
         cout<<"ÇëÊäÈëÑ¡Ïî£º";
