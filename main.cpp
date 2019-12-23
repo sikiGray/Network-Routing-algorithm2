@@ -17,7 +17,6 @@ int main(void)
 
     while(1)
     {
-        cout << "同步测试 2" << endl;
         menu();
         int choice;
         cout<<"请输入选项：";
