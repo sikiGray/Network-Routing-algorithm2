@@ -32,6 +32,7 @@ int main(void)
                 //cout<<i<<endl;
             }
 
+
             fin.close();
             fin.open("NetTopo.txt",ios::in);
             while(fin>>i>>j>>cost)
