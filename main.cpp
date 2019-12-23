@@ -14,7 +14,6 @@ int main(void)
     NetTopo G;
     ifstream fin;
 
-
     while(1)
     {
         menu();
